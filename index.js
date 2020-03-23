@@ -14,19 +14,15 @@ function alignLeft(str, width) {
     if (trimmed.length === 0 && str.length >= width) {
         return str;
     }
-    let padding = "";
     const strWidth = wcwidth(trimmed);
-
-    if (strWidth < width) {
-        padding = padding.padEnd(width - strWidth);
-    }
+    const padding = strWidth < width ? "".padEnd(width - strWidth) : "";
 
     return trimmed + padding;
 }
 
 /**
  * @function alignRight
- * @description Align string at Right
+ * @description Align string at right
  * @param {string} str
  * @param {number} width
  * @returns {number}
@@ -36,19 +32,15 @@ function alignRight(str, width) {
     if (trimmed.length === 0 && str.length >= width) {
         return str;
     }
-    let padding = "";
     const strWidth = wcwidth(trimmed);
-
-    if (strWidth < width) {
-        padding = padding.padStart(width - strWidth);
-    }
+    const padding = strWidth < width ? "".padStart(width - strWidth) : "";
 
     return padding + trimmed;
 }
 
 /**
  * @function alignCenter
- * @description Align string at Center
+ * @description Align string at center
  * @param {string} str
  * @param {number} width
  * @returns {number}
