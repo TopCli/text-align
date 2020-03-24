@@ -2,7 +2,6 @@
 
 const align = require("../index");
 
-
 test("center narrow", () => {
     expect(align.center("abc", 10)).toBe("   abc    ");
 });
@@ -12,19 +11,19 @@ test("center wide", () => {
 });
 
 test("left narrow", () => {
-    expect(align.left("abc", 10, "left")).toBe("abc       ");
+    expect(align.left("abc", 10)).toBe("abc       ");
 });
 
 test("left wide", () => {
-    expect(align.left("古古古", 10, "left")).toBe("古古古    ");
+    expect(align.left("古古古", 10)).toBe("古古古    ");
 });
 
 test("right narrow", () => {
-    expect(align.right("abc", 10, "right")).toBe("       abc");
+    expect(align.right("abc", 10)).toBe("       abc");
 });
 
 test("right narrow", () => {
-    expect(align.right("古古古", 10, "right")).toBe("    古古古");
+    expect(align.right("古古古", 10)).toBe("    古古古");
 });
 
 // overflow
@@ -38,26 +37,26 @@ test("center wide overflow", () => {
 });
 
 test("left narrow overflow", () => {
-    expect(align.left("abc", 2, "left")).toBe("abc");
+    expect(align.left("abc", 2)).toBe("abc");
 });
 
 test("left wide overflow", () => {
-    expect(align.left("古古古", 4, "left")).toBe("古古古");
+    expect(align.left("古古古", 4)).toBe("古古古");
 });
 
 test("right narrow overflow", () => {
-    expect(align.right("abc", 2, "right")).toBe("abc");
+    expect(align.right("abc", 2)).toBe("abc");
 });
 
 test("right narrow overflow", () => {
-    expect(align.right("古古古", 4, "right")).toBe("古古古");
+    expect(align.right("古古古", 4)).toBe("古古古");
 });
 
 
 // nothing
 
 test("left align nothing", () => {
-    expect(align.left("", 5, "left")).toBe("     ");
+    expect(align.left("", 5)).toBe("     ");
 });
 
 test("center align nothing", () => {
@@ -65,13 +64,13 @@ test("center align nothing", () => {
 });
 
 test("right align nothing", () => {
-    expect(align.right("", 5, "right")).toBe("     ");
+    expect(align.right("", 5)).toBe("     ");
 });
 
 // whitespace
 
 test("left align whitespace", () => {
-    expect(align.left("   ", 5, "left")).toBe("     ");
+    expect(align.left("   ", 5)).toBe("     ");
 });
 
 test("center align whitespace", () => {
@@ -79,13 +78,13 @@ test("center align whitespace", () => {
 });
 
 test("right align whitespace", () => {
-    expect(align.right("   ", 5, "right")).toBe("     ");
+    expect(align.right("   ", 5)).toBe("     ");
 });
 
 // whitespace overflow
 
 test("left align whitespace overflow", () => {
-    expect(align.left("   ", 2, "left")).toBe("   ");
+    expect(align.left("   ", 2)).toBe("   ");
 });
 
 test("center align whitespace overflow", () => {
@@ -93,13 +92,13 @@ test("center align whitespace overflow", () => {
 });
 
 test("right align whitespace overflow", () => {
-    expect(align.right("   ", 2, "right")).toBe("   ");
+    expect(align.right("   ", 2)).toBe("   ");
 });
 
 // whitespace mix
 
 test("left align whitespace mix", () => {
-    expect(align.left("  x  ", 10, "left")).toBe("  x       ");
+    expect(align.left("  x  ", 10)).toBe("  x       ");
 });
 
 test("center align whitespace mix", () => {
@@ -107,5 +106,5 @@ test("center align whitespace mix", () => {
 });
 
 test("right align whitespace mix", () => {
-    expect(align.right("  x  ", 10, "right")).toBe("       x  ");
+    expect(align.right("  x  ", 10)).toBe("       x  ");
 });
