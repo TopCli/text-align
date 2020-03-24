@@ -1,70 +1,62 @@
+/* eslint-disable no-else-return */
 "use strict";
 
 const wcwidth = require("@slimio/wcwidth");
 
+
 /**
- * @function alignLeft
- * @description Align string at left
+ * @function align
+ * @description Align string at left, right or center
  * @param {string} str
  * @param {number} width
+ * @param {string} value left, right, center / default center
  * @returns {number}
  */
-function alignLeft(str, width) {
-    const trimmed = str.trimRight();
+function align(str, width, value) {
+    let trimmed = str.trim();
+    if (value === "left") {
+        trimmed = str.trimRight();
+    }
+    else if (value === "right") {
+        trimmed = str.trimLeft();
+    }
+    else {
+        trimmed = str.trim();
+    }
+
     if (trimmed.length === 0 && str.length >= width) {
         return str;
     }
-    const strWidth = wcwidth(trimmed);
-    const padding = strWidth < width ? "".padEnd(width - strWidth) : "";
 
-    return trimmed + padding;
+    const strWidth = wcwidth(trimmed);
+    console.log(strWidth);
+    console.log(width);
+    if (value === "left") {
+        const padding = strWidth < width ? "".padEnd(width - strWidth, " ") : "";
+
+        return trimmed + padding;
+    }
+    else if (value === "right") {
+        const padding = strWidth < width ? "".padStart(width - strWidth, " ") : "";
+
+        return trimmed + padding;
+    }
+    else {
+        let padLeft = "";
+        let padRight = "";
+        const strWidth = wcwidth(trimmed);
+
+        if (strWidth < width) {
+            const padLeftBy = parseInt((width - strWidth) / 2, 10);
+            padLeft = padLeft.padEnd(padLeftBy);
+            padRight = padRight.padStart(width - (strWidth + padLeftBy));
+        }
+
+        return padLeft + trimmed + padRight;
+    }
 }
 
-/**
- * @function alignRight
- * @description Align string at right
- * @param {string} str
- * @param {number} width
- * @returns {number}
- */
-function alignRight(str, width) {
-    const trimmed = str.trimLeft();
-    if (trimmed.length === 0 && str.length >= width) {
-        return str;
-    }
-    const strWidth = wcwidth(trimmed);
-    const padding = strWidth < width ? "".padStart(width - strWidth) : "";
-
-    return padding + trimmed;
-}
-
-/**
- * @function alignCenter
- * @description Align string at center
- * @param {string} str
- * @param {number} width
- * @returns {number}
- */
-function alignCenter(str, width) {
-    const trimmed = str.trim();
-    if (trimmed.length === 0 && str.length >= width) {
-        return str;
-    }
-    let padLeft = "";
-    let padRight = "";
-    const strWidth = wcwidth(trimmed);
-
-    if (strWidth < width) {
-        const padLeftBy = parseInt((width - strWidth) / 2, 10);
-        padLeft = padLeft.padEnd(padLeftBy);
-        padRight = padRight.padStart(width - (strWidth + padLeftBy));
-    }
-
-    return padLeft + trimmed + padRight;
-}
-
-module.exports = {
-    alignCenter,
-    alignLeft,
-    alignRight
-};
+console.log(align("abc", 10, "right"));
+exports.center = align;
+exports.left = align;
+exports.right = align;
