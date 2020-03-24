@@ -21,14 +21,41 @@ $ yarn add @slimio/align-center
 ```
 
 
-## Usage example
-TBC
+### Usage example
+
+```
+const align = require("@slimio/Align-center")
+const wcwidth = require("@slimio/wcwidth");
+
+console.log(align.center('abc', 10))     // '   abc    '
+console.log(align.center('古古古', 10))  // '  古古古  '
+console.log(align.left('abc', 10))       // 'abc       '
+console.log(align.left('古古古', 10))    // '古古古    '
+console.log(align.right('abc', 10))      // '       abc'
+console.log(align.right('古古古', 10))   // '    古古古'
+```
+
+### Functions
+
+#### `align.center(str, length)` → `str`
+
+Returns *str* with spaces added to both sides such that that it is *length*
+chars long and centered in the spaces.
+
+#### `align.left(str, length)` → `str`
+
+Returns *str* with spaces to the right such that it is *length* chars long.
+
+### `align.right(str, length)` → `str`
+
+Returns *str* with spaces to the left such that it is *length* chars long.
+
 
 ## API
 TBC
 
 ## Dependencies
-This project have no dependencies.
+@slimio/wcwidth
 
 ## License
 MIT
