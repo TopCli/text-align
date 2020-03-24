@@ -10,7 +10,7 @@ const wcwidth = require("@slimio/wcwidth");
  * @param {string} str
  * @param {number} width
  * @param {string} value left, right, center / default center
- * @returns {number}
+ * @returns {string}
  */
 function align(str, width, value) {
     let trimmed = str.trim();
@@ -29,8 +29,7 @@ function align(str, width, value) {
     }
 
     const strWidth = wcwidth(trimmed);
-    console.log(strWidth);
-    console.log(width);
+    
     if (value === "left") {
         const padding = strWidth < width ? "".padEnd(width - strWidth, " ") : "";
 
@@ -56,7 +55,6 @@ function align(str, width, value) {
     }
 }
 
-console.log(align("abc", 10, "right"));
 exports.center = align;
 exports.left = align;
 exports.right = align;
