@@ -55,7 +55,10 @@ Returns *str* with spaces to the left such that it is *length* chars long.
 TBC
 
 ## Dependencies
-@slimio/wcwidth
+
+|Name|Refactoring|Security Risk|Usage|
+|---|---|---|---|
+|[@slimio/wcwidth](https://github.com/timoxley/wcwidth#readme)|Minor|Low|TBC|
 
 ## License
 MIT
