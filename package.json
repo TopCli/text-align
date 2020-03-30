@@ -1,5 +1,5 @@
 {
-    "name": "@slimio/align-center",
+    "name": "@slimio/text-align",
     "version": "1.0.0",
     "description": "A wide-character aware text alignment function for use in terminals / on the console.",
     "main": "index.js",

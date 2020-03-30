@@ -1,9 +1,9 @@
 # Align-center
-![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/SlimIO/align-center/master/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/align-center/commit-activity)
+![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/SlimIO/text-align/master/package.json&query=$.version&label=Version)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/text-align/commit-activity)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
-![dep](https://img.shields.io/david/SlimIO/align-center)
-![size](https://img.shields.io/bundlephobia/min/@slimio/align-center.svg?style=flat)
+![dep](https://img.shields.io/david/SlimIO/text-align)
+![size](https://img.shields.io/bundlephobia/min/@slimio/text-align.svg?style=flat)
 
 A wide-character aware text alignment function for use in terminals / on the console.
 
@@ -15,17 +15,16 @@ A wide-character aware text alignment function for use in terminals / on the con
 This package is available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
 
 ```bash
-$ npm i @slimio/align-center
+$ npm i @slimio/text-align
 # or
-$ yarn add @slimio/align-center
+$ yarn add @slimio/text-align
 ```
 
 
 ### Usage example
 
 ```
-const align = require("@slimio/Align-center")
-const wcwidth = require("@slimio/wcwidth");
+const align = require("@slimio/text-align")
 
 console.log(align.center('abc', 10))     // '   abc    '
 console.log(align.center('古古古', 10))  // '  古古古  '
