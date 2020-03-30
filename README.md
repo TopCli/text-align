@@ -3,7 +3,8 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/text-align/commit-activity)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 ![dep](https://img.shields.io/david/SlimIO/text-align)
-![size](https://img.shields.io/bundlephobia/min/@slimio/text-align.svg?style=flat)
+![size](https://img.shields.io/github/repo-size/SlimIO/text-align)
+![known vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/SlimIO/text-align)
 
 A wide-character aware text alignment function for use in terminals / on the console.
 
