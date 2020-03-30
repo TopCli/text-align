@@ -14,8 +14,15 @@
         "url": "git+https://github.com/SlimIO/align-center.git"
     },
     "keywords": [
-        "SlimIO",
-        "align-center"
+        "align",
+        "left",
+        "right",
+        "center",
+        "text",
+        "pad"
+    ],
+    "files": [
+        "index.d.ts"
     ],
     "author": "SlimIO",
     "license": "MIT",

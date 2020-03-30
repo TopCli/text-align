@@ -1,4 +1,4 @@
-# Align-center
+# text-align
 ![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/SlimIO/text-align/master/package.json&query=$.version&label=Version)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/text-align/commit-activity)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
@@ -23,25 +23,25 @@ $ yarn add @slimio/text-align
 
 ### Usage example
 
+```js
+const align = require("@slimio/text-align");
+
+console.log(align.center('abc', 10));     // '   abc    '
+console.log(align.center('古古古', 10));   // '  古古古  '
+console.log(align.left('abc', 10));       // 'abc       '
+console.log(align.left('古古古', 10));     // '古古古    '
+console.log(align.right('abc', 10));      // '       abc'
+console.log(align.right('古古古', 10));    // '    古古古'
 ```
-const align = require("@slimio/text-align")
 
-console.log(align.center('abc', 10))     // '   abc    '
-console.log(align.center('古古古', 10))  // '  古古古  '
-console.log(align.left('abc', 10))       // 'abc       '
-console.log(align.left('古古古', 10))    // '古古古    '
-console.log(align.right('abc', 10))      // '       abc'
-console.log(align.right('古古古', 10))   // '    古古古'
-```
+## API
 
-### Functions
-
-#### `align.center(str, length)` → `str`
+### `align.center(str, length)` → `str`
 
 Returns *str* with spaces added to both sides such that that it is *length*
 chars long and centered in the spaces.
 
-#### `align.left(str, length)` → `str`
+### `align.left(str, length)` → `str`
 
 Returns *str* with spaces to the right such that it is *length* chars long.
 
@@ -49,15 +49,11 @@ Returns *str* with spaces to the right such that it is *length* chars long.
 
 Returns *str* with spaces to the left such that it is *length* chars long.
 
-
-## API
-TBC
-
 ## Dependencies
 
 |Name|Refactoring|Security Risk|Usage|
 |---|---|---|---|
-|[@slimio/wcwidth](https://github.com/timoxley/wcwidth#readme)|Minor|Low|TBC|
+|[@slimio/wcwidth](https://github.com/SlimIO/wcwidth)|Minor|Low|Determine columns needed for a fixed-size wide-character string|
 
 ## License
 MIT
