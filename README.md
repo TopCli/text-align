@@ -7,7 +7,7 @@
 ![known vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/SlimIO/text-align)
 [![Build Status](https://travis-ci.com/SlimIO/text-align.svg?branch=master)](https://travis-ci.com/SlimIO/text-align)
 
-A wide-character aware text alignment function for use in terminals / on the console.
+A wide-character aware text alignment function for use in terminals / on the console. This package is a modern implementation of [wide-align](https://github.com/iarna/wide-align) with String.prototype.padLeft and String.prototype.padRight.
 
 ## Requirements
 - [Node.js](https://nodejs.org/en/) v12 or higher
@@ -21,7 +21,6 @@ $ npm i @slimio/text-align
 # or
 $ yarn add @slimio/text-align
 ```
-
 
 ### Usage example
 
@@ -38,17 +37,14 @@ console.log(align.right('古古古', 10));    // '    古古古'
 
 ## API
 
-### `align.center(str, length)` → `str`
-
+### `align.center(str: string, length: number)` → string
 Returns *str* with spaces added to both sides such that that it is *length*
 chars long and centered in the spaces.
 
-### `align.left(str, length)` → `str`
-
+### `align.left(str: string, length: number)` → string
 Returns *str* with spaces to the right such that it is *length* chars long.
 
-### `align.right(str, length)` → `str`
-
+### `align.right(str: string, length: number)` → string
 Returns *str* with spaces to the left such that it is *length* chars long.
 
 ## Dependencies
