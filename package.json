@@ -7,7 +7,8 @@
         "start": "node index.js",
         "prepublishOnly": "pkg-ok",
         "doc": "jsdoc -c ./jsdoc.json -r -R ./README.md -P ./package.json --verbose",
-        "test": "cross-env psp && jest --coverage"
+        "test": "cross-env psp && jest --coverage",
+        "coverage": "codecov"
     },
     "repository": {
         "type": "git",
@@ -40,6 +41,7 @@
         "@slimio/eslint-config": "^4.1.0",
         "@slimio/psp": "^0.11.1",
         "cross-env": "^7.0.2",
+        "dotenv": "^8.2.0",
         "eslint": "^7.0.0",
         "husky": "^4.2.5",
         "jest": "^26.0.1",
