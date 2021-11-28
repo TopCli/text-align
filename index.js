@@ -1,7 +1,5 @@
-"use strict";
-
-// Require Third-party Dependencies
-const wcwidth = require("@slimio/wcwidth");
+// Import Third-party Dependencies
+import wcwidth from "@topcli/wcwidth";
 
 /**
  * @function left
@@ -14,14 +12,14 @@ const wcwidth = require("@slimio/wcwidth");
  * const align = require("@slimio/text-align");
  * console.log(align.left("boo", 5)); // "boo  ";
  */
-function left(str, width) {
-    const trimmed = str.trimRight();
-    if (trimmed.length === 0 && str.length >= width) {
-        return str;
-    }
-    const strWidth = wcwidth(trimmed);
+export function left(str, width) {
+  const trimmed = str.trimRight();
+  if (trimmed.length === 0 && str.length >= width) {
+    return str;
+  }
+  const strWidth = wcwidth(trimmed);
 
-    return trimmed + (strWidth < width ? "".padEnd(width - strWidth) : "");
+  return trimmed + (strWidth < width ? "".padEnd(width - strWidth) : "");
 }
 
 /**
@@ -35,14 +33,14 @@ function left(str, width) {
  * const align = require("@slimio/text-align");
  * console.log(align.right("boo", 5)); // "  boo";
  */
-function right(str, width) {
-    const trimmed = str.trimLeft();
-    if (trimmed.length === 0 && str.length >= width) {
-        return str;
-    }
-    const strWidth = wcwidth(trimmed);
+export function right(str, width) {
+  const trimmed = str.trimLeft();
+  if (trimmed.length === 0 && str.length >= width) {
+    return str;
+  }
+  const strWidth = wcwidth(trimmed);
 
-    return (strWidth < width ? "".padStart(width - strWidth) : "") + trimmed;
+  return (strWidth < width ? "".padStart(width - strWidth) : "") + trimmed;
 }
 
 /**
@@ -56,22 +54,20 @@ function right(str, width) {
  * const align = require("@slimio/text-align");
  * console.log(align.center("boo", 5)); // " boo ";
  */
-function center(str, width) {
-    const trimmed = str.trim();
-    if (trimmed.length === 0 && str.length >= width) {
-        return str;
-    }
+export function center(str, width) {
+  const trimmed = str.trim();
+  if (trimmed.length === 0 && str.length >= width) {
+    return str;
+  }
 
-    const strWidth = wcwidth(trimmed);
-    let [padLeft, padRight] = ["", ""];
+  const strWidth = wcwidth(trimmed);
+  let [padLeft, padRight] = ["", ""];
 
-    if (strWidth < width) {
-        const padLeftBy = parseInt((width - strWidth) / 2, 10);
-        padLeft = padLeft.padEnd(padLeftBy);
-        padRight = padRight.padStart(width - (strWidth + padLeftBy));
-    }
+  if (strWidth < width) {
+    const padLeftBy = parseInt((width - strWidth) / 2, 10);
+    padLeft = padLeft.padEnd(padLeftBy);
+    padRight = padRight.padStart(width - (strWidth + padLeftBy));
+  }
 
-    return padLeft + trimmed + padRight;
+  return padLeft + trimmed + padRight;
 }
-
-module.exports = { left, right, center };

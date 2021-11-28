@@ -1,110 +1,130 @@
-"use strict";
+// Import Third-party Dependencies
+import test from "tape";
 
-const align = require("../index");
+// Import Internal Dependencies
+import * as align from "../index.js";
 
-test("center narrow", () => {
-    expect(align.center("abc", 10)).toBe("   abc    ");
+test("center narrow", (tape) => {
+  tape.strictEqual(align.center("abc", 10), "   abc    ");
+  tape.end();
 });
 
-test("center wide", () => {
-    expect(align.center("古古古", 10)).toBe("  古古古  ");
+test("center wide", (tape) => {
+  tape.strictEqual(align.center("古古古", 10), "  古古古  ");
+  tape.end();
 });
 
-test("left narrow", () => {
-    expect(align.left("abc", 10)).toBe("abc       ");
+test("left narrow", (tape) => {
+  tape.strictEqual(align.left("abc", 10), "abc       ");
+  tape.end();
 });
 
-test("left wide", () => {
-    expect(align.left("古古古", 10)).toBe("古古古    ");
+test("left wide", (tape) => {
+  tape.strictEqual(align.left("古古古", 10), "古古古    ");
+  tape.end();
 });
 
-test("right narrow", () => {
-    expect(align.right("abc", 10)).toBe("       abc");
+test("right narrow", (tape) => {
+  tape.strictEqual(align.right("abc", 10), "       abc");
+  tape.end();
 });
 
-test("right narrow", () => {
-    expect(align.right("古古古", 10)).toBe("    古古古");
+test("right narrow", (tape) => {
+  tape.strictEqual(align.right("古古古", 10), "    古古古");
+  tape.end();
 });
 
 // overflow
-
-test("center narrow overflow", () => {
-    expect(align.center("abc", 2)).toBe("abc");
+test("center narrow overflow", (tape) => {
+  tape.strictEqual(align.center("abc", 2), "abc");
+  tape.end();
 });
 
-test("center wide overflow", () => {
-    expect(align.center("古古古", 4)).toBe("古古古");
+test("center wide overflow", (tape) => {
+  tape.strictEqual(align.center("古古古", 4), "古古古");
+  tape.end();
 });
 
-test("left narrow overflow", () => {
-    expect(align.left("abc", 2)).toBe("abc");
+test("left narrow overflow", (tape) => {
+  tape.strictEqual(align.left("abc", 2), "abc");
+  tape.end();
 });
 
-test("left wide overflow", () => {
-    expect(align.left("古古古", 4)).toBe("古古古");
+test("left wide overflow", (tape) => {
+  tape.strictEqual(align.left("古古古", 4), "古古古");
+  tape.end();
 });
 
-test("right narrow overflow", () => {
-    expect(align.right("abc", 2)).toBe("abc");
+test("right narrow overflow", (tape) => {
+  tape.strictEqual(align.right("abc", 2), "abc");
+  tape.end();
 });
 
-test("right narrow overflow", () => {
-    expect(align.right("古古古", 4)).toBe("古古古");
+test("right narrow overflow", (tape) => {
+  tape.strictEqual(align.right("古古古", 4), "古古古");
+  tape.end();
 });
-
 
 // nothing
-
-test("left align nothing", () => {
-    expect(align.left("", 5)).toBe("     ");
+test("left align nothing", (tape) => {
+  tape.strictEqual(align.left("", 5), "     ");
+  tape.end();
 });
 
-test("center align nothing", () => {
-    expect(align.center("", 5)).toBe("     ");
+test("center align nothing", (tape) => {
+  tape.strictEqual(align.center("", 5), "     ");
+  tape.end();
 });
 
-test("right align nothing", () => {
-    expect(align.right("", 5)).toBe("     ");
+test("right align nothing", (tape) => {
+  tape.strictEqual(align.right("", 5), "     ");
+  tape.end();
 });
 
 // whitespace
-
-test("left align whitespace", () => {
-    expect(align.left("   ", 5)).toBe("     ");
+test("left align whitespace", (tape) => {
+  tape.strictEqual(align.left("   ", 5), "     ");
+  tape.end();
 });
 
-test("center align whitespace", () => {
-    expect(align.center("   ", 5)).toBe("     ");
+test("center align whitespace", (tape) => {
+  tape.strictEqual(align.center("   ", 5), "     ");
+  tape.end();
 });
 
-test("right align whitespace", () => {
-    expect(align.right("   ", 5)).toBe("     ");
+test("right align whitespace", (tape) => {
+  tape.strictEqual(align.right("   ", 5), "     ");
+  tape.end();
 });
 
 // whitespace overflow
-
-test("left align whitespace overflow", () => {
-    expect(align.left("   ", 2)).toBe("   ");
+test("left align whitespace overflow", (tape) => {
+  tape.strictEqual(align.left("   ", 2), "   ");
+  tape.end();
 });
 
-test("center align whitespace overflow", () => {
-    expect(align.center("   ", 2)).toBe("   ");
+test("center align whitespace overflow", (tape) => {
+  tape.strictEqual(align.center("   ", 2), "   ");
+  tape.end();
 });
 
-test("right align whitespace overflow", () => {
-    expect(align.right("   ", 2)).toBe("   ");
+test("right align whitespace overflow", (tape) => {
+  tape.strictEqual(align.right("   ", 2), "   ");
+  tape.end();
 });
 
 // whitespace mix
-
-test("left align whitespace mix", () => {
-    expect(align.left("  x  ", 10)).toBe("  x       ");
+test("left align whitespace mix", (tape) => {
+  tape.strictEqual(align.left("  x  ", 10), "  x       ");
+  tape.end();
 });
 
-test("center align whitespace mix", () => {
-    expect(align.center("  x  ", 10)).toBe("    x     ");
+test("center align whitespace mix", (tape) => {
+  tape.strictEqual(align.center("  x  ", 10), "    x     ");
+  tape.end();
 });
 
-test("right align whitespace mix", () => {
-    expect(align.right("  x  ", 10)).toBe("       x  ");
+test("right align whitespace mix", (tape) => {
+  tape.strictEqual(align.right("  x  ", 10), "       x  ");
+  tape.end();
 });
