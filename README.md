@@ -2,7 +2,7 @@
 ![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/TopCli/text-align/master/package.json&query=$.version&label=Version)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/TopCli/text-align/commit-activity)
 [![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/TopCli/text-align/blob/master/LICENSE)
-![build](https://img.shields.io/github/workflow/status/TopCli/text-align/Node.js%20CI)
+![build](https://img.shields.io/github/actions/workflow/status/TopCli/text-align/node.js.yml?style=for-the-badge)
 
 A wide-character aware text alignment function for use in terminals / on the console. This package is a modern implementation of [wide-align](https://github.com/iarna/wide-align) with String.prototype.padLeft and String.prototype.padRight.
 
