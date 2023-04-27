@@ -1,7 +1,7 @@
 # text-align
 ![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/TopCli/text-align/master/package.json&query=$.version&label=Version)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/TopCli/text-align/commit-activity)
-[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)](https://github.com/TopCli/text-align/blob/master/LICENSE)
+[![mit](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://github.com/TopCli/text-align/blob/master/LICENSE)
 [![OpenSSF
 Scorecard](https://api.securityscorecards.dev/projects/github.com/TopCli/text-align/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/TopCli/text-align)
 ![build](https://img.shields.io/github/actions/workflow/status/TopCli/text-align/node.js.yml?style=for-the-badge)
