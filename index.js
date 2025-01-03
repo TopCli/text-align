@@ -13,7 +13,7 @@ import wcwidth from "@topcli/wcwidth";
  * console.log(align.left("boo", 5)); // "boo  ";
  */
 export function left(str, width) {
-  const trimmed = str.trimRight();
+  const trimmed = str.trimEnd();
   if (trimmed.length === 0 && str.length >= width) {
     return str;
   }
@@ -34,7 +34,7 @@ export function left(str, width) {
  * console.log(align.right("boo", 5)); // "  boo";
  */
 export function right(str, width) {
-  const trimmed = str.trimLeft();
+  const trimmed = str.trimStart();
   if (trimmed.length === 0 && str.length >= width) {
     return str;
   }
