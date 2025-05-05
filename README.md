@@ -9,7 +9,7 @@ Scorecard](https://api.securityscorecards.dev/projects/github.com/TopCli/text-al
 A wide-character aware text alignment function for use in terminals / on the console. This package is a modern implementation of [wide-align](https://github.com/iarna/wide-align) with String.prototype.padLeft and String.prototype.padRight.
 
 ## Requirements
-- [Node.js](https://nodejs.org/en/) v14 or higher
+- [Node.js](https://nodejs.org/en/) v20 or higher
 
 ## Getting Started
 
