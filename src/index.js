@@ -1,5 +1,5 @@
-// Import Third-party Dependencies
-import wcwidth from "@topcli/wcwidth";
+// Import Internal Dependencies
+import { stringLength } from "./stringLength.js";
 
 /**
  * @function left
@@ -17,7 +17,7 @@ export function left(str, width) {
   if (trimmed.length === 0 && str.length >= width) {
     return str;
   }
-  const strWidth = wcwidth(trimmed);
+  const strWidth = stringLength(trimmed);
 
   return trimmed + (strWidth < width ? "".padEnd(width - strWidth) : "");
 }
@@ -38,7 +38,7 @@ export function right(str, width) {
   if (trimmed.length === 0 && str.length >= width) {
     return str;
   }
-  const strWidth = wcwidth(trimmed);
+  const strWidth = stringLength(trimmed);
 
   return (strWidth < width ? "".padStart(width - strWidth) : "") + trimmed;
 }
@@ -60,7 +60,7 @@ export function center(str, width) {
     return str;
   }
 
-  const strWidth = wcwidth(trimmed);
+  const strWidth = stringLength(trimmed);
   let [padLeft, padRight] = ["", ""];
 
   if (strWidth < width) {

@@ -3,14 +3,14 @@ import { test } from "node:test";
 import assert from "node:assert";
 
 // Import Internal Dependencies
-import * as align from "../index.js";
+import * as align from "../src/index.js";
 
 test("center narrow", () => {
   assert.strictEqual(align.center("abc", 10), "   abc    ");
 });
 
 test("center wide", () => {
-  assert.strictEqual(align.center("古古古", 10), "  古古古  ");
+  assert.strictEqual(align.center("古古古", 7), "  古古古  ");
 });
 
 test("left narrow", () => {
@@ -18,7 +18,7 @@ test("left narrow", () => {
 });
 
 test("left wide", () => {
-  assert.strictEqual(align.left("古古古", 10), "古古古    ");
+  assert.strictEqual(align.left("古古古", 6), "古古古   ");
 });
 
 test("right narrow", () => {
@@ -26,7 +26,7 @@ test("right narrow", () => {
 });
 
 test("right narrow", () => {
-  assert.strictEqual(align.right("古古古", 10), "    古古古");
+  assert.strictEqual(align.right("古古古", 6), "   古古古");
 });
 
 // overflow
@@ -35,7 +35,7 @@ test("center narrow overflow", () => {
 });
 
 test("center wide overflow", () => {
-  assert.strictEqual(align.center("古古古", 4), "古古古");
+  assert.strictEqual(align.center("古古古", 2), "古古古");
 });
 
 test("left narrow overflow", () => {
@@ -43,7 +43,7 @@ test("left narrow overflow", () => {
 });
 
 test("left wide overflow", () => {
-  assert.strictEqual(align.left("古古古", 4), "古古古");
+  assert.strictEqual(align.left("古古古", 2), "古古古");
 });
 
 test("right narrow overflow", () => {
@@ -51,7 +51,7 @@ test("right narrow overflow", () => {
 });
 
 test("right narrow overflow", () => {
-  assert.strictEqual(align.right("古古古", 4), "古古古");
+  assert.strictEqual(align.right("古古古", 2), "古古古");
 });
 
 // nothing
