@@ -10,6 +10,11 @@
     "coverage": "c8 -r html npm test",
     "lint": "eslint ."
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public",
+    "provenance": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TopCli/text-align.git"
@@ -32,7 +37,7 @@
   },
   "homepage": "https://github.com/TopCli/text-align#readme",
   "dependencies": {
-    "@topcli/wcwidth": "^1.0.1"
+    "@topcli/wcwidth": "1.0.1"
   },
   "devDependencies": {
     "@openally/config.eslint": "^2.2.0",
